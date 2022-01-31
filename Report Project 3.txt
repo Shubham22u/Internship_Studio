@@ -1,0 +1,37 @@
+Title : Cross Site Scripting (XXS)
+URL(Domain) : http://vulnweb.com/
+Sub Domain : http://testasp.vulnweb.com/
+
+Steps To Reproduce XXS :
+
+1) Vist Domian : http://vulnweb.com/
+2) Open The Search Option
+3) Click On Search Dialogue Box
+4) Open BurpSuite And On Proxy Bar
+5) Switch On Intercept (Intercept is off) 
+6) On The Search Box (http://testasp.vulnweb.com/) 
+7) Now You Can Find List Of Payload For XXS
+8) Send The Request To Intruder And Paste All The Payloads
+9) Start The Attack
+10) Find A Seccessful Payload, In My Case </scrip</script>t><img src =q onerror=prompt(8)>
+
+
+
+
+Impact Of XXS:
+
+Cross site scripting (XSS) is a cyberattack method that involves running malicious code as part of a vulnerable web application. Unlike other attack vectors like SQL injections, XSS does not target the application directly—it primarily targets the user.
+
+If successful, a cross site scripting attack can severely impact websites and web applications, damage their reputation and relationships with customers. XXS can deface websites, can result in compromised user accounts, and can run malicious code on web pages, which can lead to a compromise of the user’s device. 
+
+If the process reveals session cookies, the attacker can use them to impersonate a legitimate user and perform any action the user is allowed to perform in the web application—including sensitive operations like purchases, transfer of funds, or administrative actions. 
+
+
+
+
+
+Mitigation:
+
+Never trust user input. In other words, all user input should be sanitized at both the client and server so that potentially dangerous characters, text, or code is removed (or rendered benign) through the use of escaping, filtering, and validating. There are libraries to help with this on every platform. The following resources are a great place to gain a deeper understanding of XSS as well as the input sanitization techniques used to mitigate it.
+
+
